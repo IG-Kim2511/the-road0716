@@ -35,7 +35,7 @@ html {
   background-color: var(--secondary-color);
   margin: 3.5rem;
   /* T: */
-  box-shadow: 0 1rem 3rem var(--grey-color);
+  box-shadow: 2rem 4rem 2rem red;
   /*T: CSS 2 : 거슬리는 스크롤바를 없앰 */
   overflow: hidden;
 }
@@ -69,8 +69,10 @@ html {
   text-transform: uppercase;
   /* T */
   letter-spacing: 0.1rem;
-  /* T */
-  text-shadow: 0 0.3rem 0.5rem var(--grey-color);
+  /* T : 오른쪽, 아래, opacity, 색
+  https://developer.mozilla.org/ko/docs/Web/CSS/text-shadow  
+  */
+  text-shadow: 1rem 3rem 0.5rem red;
 }
 .heading {
   font-size: 8rem;
@@ -189,3 +191,64 @@ https://iankim2511.tistory.com/57
 }
 
 /* <Popular tours> */
+.popular-tours {
+  padding: 5rem 0 10rem 0;
+}
+.popular-tours-heading {
+  font-size: 8rem;
+  text-align: center;
+  margin-bottom: 8rem;
+  color: var(--primary-color);
+  text-shadow: 1rem 2rem 0.5rem red;
+}
+
+.cards-wrapper {
+  display: flex;
+  justify-content: space-evenly;
+}
+/* css 4: card, card-image의 width 를 함께 조절해서 flex사이의 빈칸 완성 */
+.card {
+  width: 35rem;
+  position: relative;
+  perspective: 150rem;
+}
+/* css 4 */
+.card-image {
+  width: 100%;
+  border-radius: 1rem;
+}
+.front-side {
+  text-align: center;
+  background-color: var(--white-color);
+  border-radius: 1rem;
+  /* CSS 6 */
+  position: relative;
+}
+
+.tour-name {
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-shadow: 0 0 2rem blue;
+  /* CSS 6 : 글자를 absolute줘서 위로 올려서 사진안에 넣음
+  */
+  position: absolute;
+  top: 30%;
+  right: 1.5rem;
+  color: var(--white-color);
+}
+.card-list {
+  width: 80%;
+  /* T: 가운데 정렬 */
+  margin: auto;
+  padding: 2rem 0 3rem 0;
+}
+.card-list-item {
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: var(--light-grey-color);
+  margin: 2rem 0;
+  /* T */
+  border-bottom: 0.1rem solid var(--primary-color);
+  padding-bottom: 1.5rem;
+}
