@@ -210,6 +210,7 @@ https://iankim2511.tistory.com/57
 .card {
   width: 35rem;
   position: relative;
+  /* CSS 8 */
   perspective: 150rem;
 }
 /* css 4 */
@@ -223,6 +224,17 @@ https://iankim2511.tistory.com/57
   border-radius: 1rem;
   /* CSS 6 */
   position: relative;
+  z-index: 10;
+  /* CSS 8 */
+  opacity: 0.9;
+}
+
+/* JS 2 */
+.change > .front-side {
+  transform: translateZ(-5rem) translateX(3rem);
+  box-shadow: 0 2rem 4rem #777;
+  opacity: 0.5;
+  z-index: 0;
 }
 
 .tour-name {
@@ -251,4 +263,63 @@ https://iankim2511.tistory.com/57
   /* T */
   border-bottom: 0.1rem solid var(--primary-color);
   padding-bottom: 1.5rem;
+}
+
+.back-side {
+  /* CSS 6 */
+  position: absolute;
+  top: 0;
+  background-color: var(--primary-color);
+  width: 100%;
+  height: 100%;
+  border-radius: 1rem;
+  box-shadow: 1rem 1rem #777;
+  flex-direction: column;
+  /* CSS 8 */
+  opacity: 0.5;
+  /* CSS 8 */
+  transform: translateZ(-5rem) translateX(3rem);
+}
+
+/* JS 2 <pupular tours> 버튼누르면 앞뒤 화면전환 */
+
+.change > .back-side {
+  transform: translateZ(0) translateX(0);
+  box-shadow: 0 0.5rem 2rem #aaa;
+  opacity: 0.9;
+}
+
+.tour-price {
+  font-size: 5rem;
+  font-weight: 300;
+  color: var(--white-color);
+  margin-bottom: 3rem;
+}
+
+.card-button {
+  color: var(--primary-color);
+  background-color: var(--white-color);
+  border: none;
+  font-size: 2.5rem;
+  padding: 1rem 2rem;
+  /* T */
+  letter-spacing: 2rem;
+  border-radius: 5rem;
+  cursor: pointer;
+}
+.navigation-button {
+  position: absolute;
+  top: 0.5rem;
+  left: 0.5rem;
+  background-color: rega(255, 255, 255, 0.8);
+  padding: 0.5rem;
+  color: var(--light-grey-color);
+  border-radius: 1rem;
+  border: none;
+  font-size: 1.5rem;
+  font-weight: 600;
+  /* T */
+  text-transform: uppercase;
+  letter-spacing: 2rem;
+  cursor: pointer;
 }
